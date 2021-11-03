@@ -11,7 +11,17 @@ public class Car {
     private final int id;
     private String image;
     private static  int counter = 1;
-    private double FipeTable;
-    private DataSheet dataSheet;
+    private double fipeTable;
     private String story;
+    private String engine;
+    private String fuel;
+    private int horsePower;
+    private double torque;
+    private String topSpeed;
+    private String acceleration;
+    private String exchange;
+    private String traction;
+    private String suspension;
+    private String brakes;
+
 }
