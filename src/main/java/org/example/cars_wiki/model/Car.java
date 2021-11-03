@@ -1,5 +1,7 @@
 package org.example.cars_wiki.model;
 
+import org.example.cars_wiki.dto.CreateCarDto;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,7 +50,7 @@ public class Car {
 
 
     public Car(CreateCarDto dto) {
-        this(dto.getImage(), dto.getName(), dto.getFipeTable(), dto.getStory(), dto.getEngine(), dto.getFuel(), dto.getHorsePower(), dto.getTorque(), dto.getTopSpeed(), dto.getAcceleration(), dto.getTraction(), dto.getSuspension(), dto.getBrakes(), dto.getStory);
+        this(dto.getImage(), dto.getName(), dto.getFipeTable(), dto.getStory(), dto.getEngine(), dto.getFuel(), dto.getHorsePower(), dto.getTorque(), dto.getTopSpeed(), dto.getAcceleration(), dto.getTraction(), dto.getSuspension(), dto.getBrakes(), dto.getStory());
     }
 
     public String getName() {
