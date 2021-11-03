@@ -1,6 +1,7 @@
 package org.example.cars_wiki.model;
 
 import org.example.cars_wiki.dto.CreateCarDto;
+import org.example.cars_wiki.dto.PartialUpdateCarDto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

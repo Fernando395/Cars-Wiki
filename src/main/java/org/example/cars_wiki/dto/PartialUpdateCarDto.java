@@ -74,6 +74,10 @@ public class PartialUpdateCarDto {
     public JsonNullable<String> getTopSpeed() {
         return topSpeed;
     }
+
+    public JsonNullable<String> getTraction() {
+        return traction;
+    }
 }
 
 
