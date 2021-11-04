@@ -3,6 +3,7 @@ package org.example.cars_wiki.controller;
 import org.example.cars_wiki.dto.CreateCarDto;
 import org.example.cars_wiki.dto.PartialUpdateCarDto;
 import org.example.cars_wiki.model.Car;
+import org.example.cars_wiki.repository.DataBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
