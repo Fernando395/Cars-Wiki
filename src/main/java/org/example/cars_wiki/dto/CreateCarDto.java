@@ -2,8 +2,8 @@ package org.example.cars_wiki.dto;
 
 public class CreateCarDto {
 
-    private String name;
     private String image;
+    private String name;
     private double fipeTable;
     private String story;
     private String engine;
@@ -17,9 +17,10 @@ public class CreateCarDto {
     private String suspension;
     private String brakes;
 
-    public CreateCarDto(String name, String image, double fipeTable, String story, String engine, String fuel, int horsePower, double torque, String topSpeed, String acceleration, String exchange, String traction, String suspension, String brakes) {
-        this.name = name;
+    public CreateCarDto(String image, String name, double fipeTable, String story, String engine, String fuel, int horsePower, double torque, String topSpeed, String acceleration, String exchange, String traction, String suspension, String brakes) {
+
         this.image = image;
+        this.name = name;
         this.fipeTable = fipeTable;
         this.story = story;
         this.engine = engine;

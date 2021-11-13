@@ -13,10 +13,8 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private final int id;
     private String name;
     private String image;
-    private static int counter = 1;
     private double fipeTable;
     private String story;
     private String engine;
@@ -30,9 +28,10 @@ public class Car {
     private String suspension;
     private String brakes;
 
-    public Car(String name, String image, double fipeTable, String story, String engine, String fuel, int horsePower, double torque, String topSpeed, String acceleration, String exchange, String traction, String suspension, String brakes) {
-        this.name = name;
+    public Car(String image, String name, double fipeTable, String story, String engine, String fuel, int horsePower, double torque, String topSpeed, String acceleration, String exchange, String traction, String suspension, String brakes) {
+
         this.image = image;
+        this.name = name;
         this.fipeTable = fipeTable;
         this.story = story;
         this.engine = engine;
@@ -45,13 +44,13 @@ public class Car {
         this.traction = traction;
         this.suspension = suspension;
         this.brakes = brakes;
-        this.id = counter;
-        counter++;
     }
 
-
     public Car(CreateCarDto dto) {
-        this(dto.getImage(), dto.getName(), dto.getFipeTable(), dto.getStory(), dto.getEngine(), dto.getFuel(), dto.getHorsePower(), dto.getTorque(), dto.getTopSpeed(), dto.getAcceleration(), dto.getTraction(), dto.getSuspension(), dto.getBrakes(), dto.getStory());
+        this(dto.getImage(), dto.getName(), dto.getFipeTable(), dto.getStory(), dto.getEngine(), dto.getFuel(), dto.getHorsePower(), dto.getTorque(), dto.getTopSpeed(), dto.getAcceleration(), dto.getExchange(), dto.getTraction(), dto.getSuspension(), dto.getBrakes());
+    }
+
+    public Car() {
     }
 
     public String getName() {

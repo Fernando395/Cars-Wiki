@@ -6,27 +6,29 @@ import org.example.cars_wiki.model.Car;
 import org.example.cars_wiki.repository.DataBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class CarController {
 
     @Autowired
     private DataBaseRepository dataBaseRepository;
 
     @GetMapping(path = "/car")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public @ResponseBody
     Iterable<Car> findCars() {
         return dataBaseRepository.findAll();
     }
 
-    @GetMapping("/car/{id}")
+    @GetMapping(path = "/car/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public Car findCarById(@PathVariable int id) {
         return findCarById(id);
     }
 
-    @DeleteMapping("/car/{id}")
+    @DeleteMapping(path = "/car/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public void deleteCar(@PathVariable int id) {
         dataBaseRepository.deleteById(id);
     }
@@ -38,13 +40,13 @@ public class CarController {
         return dataBaseRepository.save(car);
     }
 
-    @PutMapping("/car/{id}")
+    @PutMapping(path = "/car/{id}")
     public Car UpdateCar(@RequestBody CreateCarDto updateCarDto, @PathVariable int id) {
         Car car = findCarById(id);
         return car.updateFromDto(updateCarDto);
     }
 
-    @PatchMapping("/car/{id}")
+    @PatchMapping(path = "/car/{id}")
     public Car PartialUpdateCar(@RequestBody PartialUpdateCarDto dto, @PathVariable int id) {
         Car car = findCarById(id);
         return car.partialUpdateFromDto(dto);
