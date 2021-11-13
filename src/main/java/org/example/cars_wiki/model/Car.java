@@ -13,8 +13,10 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String name;
     private String image;
+    private static int counter = 1;
     private double fipeTable;
     private String story;
     private String engine;
@@ -44,6 +46,8 @@ public class Car {
         this.traction = traction;
         this.suspension = suspension;
         this.brakes = brakes;
+        this.id = counter;
+        counter++;
     }
 
     public Car(CreateCarDto dto) {
@@ -51,6 +55,14 @@ public class Car {
     }
 
     public Car() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

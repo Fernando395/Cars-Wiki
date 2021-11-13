@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 public class CarController {
 
@@ -23,8 +25,8 @@ public class CarController {
 
     @GetMapping(path = "/car/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Car findCarById(@PathVariable int id) {
-        return findCarById(id);
+    public Optional<Car> findCarById(@PathVariable int id) {
+        return dataBaseRepository.findById(id);
     }
 
     @DeleteMapping(path = "/car/{id}")
@@ -40,15 +42,15 @@ public class CarController {
         return dataBaseRepository.save(car);
     }
 
-    @PutMapping(path = "/car/{id}")
+    /*PutMapping(path = "/car/{id}")
     public Car UpdateCar(@RequestBody CreateCarDto updateCarDto, @PathVariable int id) {
-        Car car = findCarById(id);
+        Optional<Car> car = dataBaseRepository.findById(id);
         return car.updateFromDto(updateCarDto);
     }
 
     @PatchMapping(path = "/car/{id}")
     public Car PartialUpdateCar(@RequestBody PartialUpdateCarDto dto, @PathVariable int id) {
-        Car car = findCarById(id);
+        Optional<Car> car = dataBaseRepository.findById(id);
         return car.partialUpdateFromDto(dto);
-    }
+    }*/
 }
